@@ -1,0 +1,287 @@
+@media only screen and (max-width:1025px) {
+
+    /*####################################### Mobile Style ###################################################################*/
+    .ObjectImage {
+        align-content: stretch;
+        width: 150px;
+        height: 100px;
+        float: left;
+        margin-right: 5px;
+        margin-bottom: 2px;
+        border-radius: 3px;
+        animation: mbl-zoom-out 0.8s forwards;
+        -webkit-animation: mbl-zoom-out 0.8s forwards;
+    }
+
+    .ObjectImage:hover {
+        animation: mbl-zoom-in 1s forwards;
+        -webkit-animation: mbl-zoom-in 1s forwards;
+    }
+
+    /* ======== Effects ========*/
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 3.0s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: 0.6s ease;
+    }
+
+    .fade-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .fade-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: 0.6s ease;
+    }
+
+    .fade-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    @keyframes mbl-zoom-in {
+        100% {
+            transform-origin: 0% 30%;
+            transform: scale(2, 2);
+        }
+    }
+
+    @-webkit-keyframes mbl-zoom-in {
+        100% {
+            transform-origin: 0% 30%;
+            transform: scale(2, 2);
+        }
+    }
+
+    @keyframes mbl-zoom-out {
+        0% {
+            transform-origin: 0% 30%;
+            transform: scale(2, 2);
+        }
+
+        100% {
+            transform-origin: 0% 0%;
+            transform: scale(1, 1);
+        }
+    }
+
+    @-webkit-keyframes mbl-zoom-out {
+        0% {
+            transform-origin: 0% 30%;
+            transform: scale(1.7, 1.7);
+        }
+
+        100% {
+            transform-origin: 0% 0%;
+            transform: scale(1, 1);
+        }
+    }
+
+    @keyframes mbl-DropMenu {
+        100% {
+            transform: scaleX(300%);
+            transform: scaleY(700%);
+        }
+    }
+
+    @-webkit-keyframes mbl-DropMenu {
+        100% {
+            -webkit-transform: scaleX(300%);
+            -webkit-transform: scaleY(700%);
+        }
+    }
+
+    @keyframes mbl-fadeIn-fadeOut {
+
+        0% {
+            opacity: 0;
+        }
+
+        /*
+    50% {
+        opacity: 0.5;
+        ;
+    }
+    */
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes mbl-zoom-in-zoom-out {
+
+        0% {
+            transform: scale(0.1, 0.1);
+        }
+
+        /*
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+    */
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+
+
+}
+
+/*####################################### DeskTop Style ###################################################################*/
+
+@media only screen and (min-width:1026px) {
+
+    .ObjectImage {
+        align-content: stretch;
+        width: 300px;
+        height: 200px;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        animation: zoom-out 0.8s forwards;
+        -webkit-animation: zoom-out 0.8s forwards;
+    }
+
+    .ObjectImage:hover {
+        animation: zoom-in 1s forwards;
+        -webkit-animation: zoom-in 1s forwards;
+    }
+
+
+    /* ======== Effects ========*/
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 3.0s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fade-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: 0.6s ease;
+    }
+
+    .fade-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .fade-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: 0.6s ease;
+    }
+
+    .fade-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    @keyframes zoom-in {
+        100% {
+            transform-origin: 0% 50%;
+            transform: scale(1.7, 1.7);
+        }
+    }
+
+    @-webkit-keyframes zoom-in {
+        100% {
+            transform-origin: 0% 50%;
+            transform: scale(1.7, 1.7);
+        }
+    }
+
+    @keyframes zoom-out {
+        0% {
+            transform-origin: 0% 50%;
+            transform: scale(1.7, 1.7);
+        }
+
+        100% {
+            transform-origin: 0% 0%;
+            transform: scale(1, 1);
+        }
+    }
+
+    @-webkit-keyframes zoom-out {
+        0% {
+            transform-origin: 0% 50%;
+            transform: scale(1.7, 1.7);
+        }
+
+        100% {
+            transform-origin: 0% 0%;
+            transform: scale(1, 1);
+        }
+    }
+
+    @keyframes DropMenu {
+        100% {
+            transform: scaleX(300%);
+            transform: scaleY(700%);
+        }
+    }
+
+    @-webkit-keyframes DropMenu {
+        100% {
+            -webkit-transform: scaleX(300%);
+            -webkit-transform: scaleY(700%);
+        }
+    }
+
+    @keyframes fadeIn-fadeOut {
+
+        0% {
+            opacity: 0;
+        }
+
+        /*
+    50% {
+        opacity: 0.5;
+        ;
+    }
+    */
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes zoom-in-zoom-out {
+
+        0% {
+            transform: scale(0.1, 0.1);
+        }
+
+        /*
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+    */
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+
+}

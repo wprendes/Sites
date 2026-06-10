@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/style.css">
+        <script lang="javascript" src="./script/slider.js"></script>
+        <script lang="javascript" src="./script/text.js"></script>
+        <script lang="javascript" src="./script/bg.js"></script>
+        <script lang="javascript" src="./script/frames.js"></script>
+        <title>Java Script Demo</title>
+    </head>
+
+    <body>
+        <div id="Grow" class="Grow">
+            <p>
+            <h1>JavaScript Demo</h1>
+            This is a demo of JavaScript features.</p>
+        </div>
+        <script>
+            const grow = new Frame("Grow");
+            const object = document.getElementById("Grow");
+            object.addEventListener("click", () => grow.GrowTopRight_BottomLeft(500, 500));
+        </script>
+
+        <div id="SlideHolder">
+            <div id="slide1" class="slider">
+                <div class="slides">
+                    <div class="slide">1</div>
+                    <div class="slide">2</div>
+                    <div class="slide">3</div>
+                    <div class="slide">4</div>
+                    <div class="slide">5</div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                const slider1 = new Slider("slide1");
+                slider1.AutoPlay();
+            </script>
+            <button class="LeftSide" onclick="slider1.back();">❮</button>
+            <button class="RightSide" onclick="slider1.next();">❯</button>
+        </div>
+        <br>
+        <div>
+            <div id="slide2" class="slider">
+                <div class="slides">
+                    <div class="slide">1</div>
+                    <div class="slide">2</div>
+                    <div class="slide">3</div>
+                    <div class="slide">4</div>
+                </div>
+            </div>
+            <script>
+                const slider2 = new Slider("slide2");
+                slider2.AutoPlay(7000);
+            </script>
+            <div class="controls">
+                <button onclick="slider2.autoback();">❮</button>
+                <button onclick="slider2.pause();">⏸</button>
+                <button onclick="slider2.autonext();">❯</button>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div id="slide3" class="slider">
+                <div class="slides">
+                    <div class="slide">1</div>
+                    <div class="slide">2</div>
+                    <div class="slide">3</div>
+                    <div class="slide">4</div>
+                    <div class="slide">5</div>
+                    <div class="slide">6</div>
+                </div>
+            </div>
+            <script>
+                const slider3 = new Slider("slide3");
+                slider3.AutoPlay(7000);
+            </script>
+            <div class="controls">
+                <button onclick="javascript:slider3.autoback()">◀</button>
+                <button onclick="javascript:slider3.pause();">⏸</button>
+                <button onclick="javascript:slider3.autonext()">▶</button>
+            </div>
+        </div>
+        <br>
+        <div class="Blank">
+
+        </div>
+        <script>
+            const bg = new BackgroundFX(".Blank");
+            bg.setImage("/Style/images/space.webp");
+            // bg.setSize("cover");
+            //bg.setColor("#222");
+            //bg.setGradient("linear-gradient(45deg, #ff7e5f, #feb47b)");
+            //bg.setSize("30%");
+
+        </script>
+        <div>
+            <p class="pop">Hello World</p>
+            <p class="pop">Another text</p>
+        </div>
+        <script>
+            new PopOnScroll(".pop");
+            document.querySelectorAll(".pop").forEach(el => observer.observe(el));
+        </script>
+
+        <div class="parallax" data-speed="0.3"></div>
+        <script>
+            //new Parallax(".parallax");  
+            const element = document.querySelector(".parallax");
+            document.addEventListener("mousemove", e => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 80;
+                const y = (e.clientY / window.innerHeight - 0.5) * 80;
+
+                element.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        </script>
+
+        <div>
+            <h2 class="fade-in">Hello World</h2>
+            <p class="fade-in">This text fades in as you scroll.</p>
+            <img alt="ted" class="fade-in" src="style/images/Ted.jpg" />
+        </div>
+        <script>
+            new FadeIn(".fade-in");
+        </script>
+
+        <h1 class="fade-left">Big Fade Left</h1>
+        <script>
+            new FadeLeft(".fade-left");
+        </script>
+
+        <h1 class="fade-right">Big Fade Right</h1>
+        <h1 class="fade-right">Big Fade Right</h1>
+        <h1 class="fade-right">Big Fade Right</h1>
+        <h1 class="fade-right">Big Fade Right</h1>
+        <script>
+            new FadeRight(".fade-right");
+        </script>
+    </body>
+
+</html>
