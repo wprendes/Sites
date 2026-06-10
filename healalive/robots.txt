@@ -1,0 +1,14 @@
+#www.healalive.com
+#Created on 04-05-2026
+#MainDir
+Allow: //
+#SiteDir
+Disallow: /Scripts/
+Disallow: /Style/
+Disallow: /Style/Images/
+#SiteMap
+https://www.healalive.com/index.html
+https://www.healalive.com/indexes.html
+https://healalive.com/index.html
+https://healalive.com/indexes.html
+https://healalive.com/sitemap.xml

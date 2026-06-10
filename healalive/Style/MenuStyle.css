@@ -1,0 +1,62 @@
+@media only screen and (max-width:1025px) {
+
+    /*####################################### Mobile Style ###################################################################*/
+    .Menu {
+        background-color: transparent;
+        float: right;
+        text-align: center;
+        color: white;
+    }
+
+    .Menu a {
+        padding: 5px 2px 5px 2px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .MenuItem {
+        background-color: black;
+        width: 100px;
+        padding: 5px 2px 5px 2px;
+        border: 1px solid white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        font-weight: bold;
+        display: grid;
+    }
+
+    .MenuItem :hover {
+        background-color: transparent;
+        display: grid;
+    }
+
+    .MenuItem :hover+.SubMenu {
+        display: grid;
+    }
+
+    .SubMenu {
+        background-color: black;
+        right: 110px;
+        margin-top: -6px;
+        text-align: center;
+        display: none;
+        position: absolute;
+    }
+
+    .SubMenu:hover {
+        display: grid;
+    }
+
+    .MenuItem .SubMenu .MenuItem {
+        margin-top: 3px;
+    }
+
+    .MenuItem .SubMenu .SubMenu .MenuItem {
+        margin-top: 3px;
+        margin-right: -7px;
+    }
+
+}
+
+/*####################################### DeskTop Style ###################################################################*/
+@media only screen and (min-width:1026px) {}
