@@ -17,7 +17,8 @@
             }
 
             p {
-                display: block;
+                width: 100%;
+                display: inline-block;
             }
 
             .BoxColor {
@@ -46,6 +47,55 @@
                 cursor: pointer;
                 transition: all 0.5s ease-in-out;
             }
+
+            /*Animated Image Rotation*/
+            .BoxImg:hover {
+                animation: spin 10s linear infinite;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .SectionContainer {
+                width: 650px;
+                height: fit-content;
+                margin: auto;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .PreviewBox {
+                background-color: lightgray;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #PreviewBox {
+                width: 600px;
+                height: 800px;
+                margin: auto;
+            }
+
+            #ImageList {
+                padding: 10px;
+                display: flex;
+                overflow: auto;
+            }
+
+            .ImageSelect {
+                width: 150px;
+                height: 100px;
+                margin-right: 10px;
+                display: inline;
+                cursor: pointer;
+            }
         </style>
 
         <div id="Page">
@@ -66,10 +116,34 @@
                 <p>Click me to change Image!</p>
             </div>
             <script>
-                const effectLB = new BackgroundFX(".BoxImg");
+                const effectLB = new BackgroundFX(".BoxImg", true);
                 const objTL = document.getElementById("ImageBox");
                 objTL.addEventListener("click", () => { effectLB.setImage("./style/images/Ted.jpg"); });
             </script>
+
+            <P>Some other type of use...</P>
+
+            <div class="SectionContainer">
+                <div id="PreviewBox" class="PreviewBox">
+                </div>
+                <script>
+                    const objPreView = new BackgroundFX(".PreviewBox");
+                </script>
+                <div id="ImageList">
+                    <img src="style/images/Image1.jpeg" class="ImageSelect" alt="Image1"
+                        onclick="javascript:objPreView.setImage('./style/images/Image1.jpeg');" />
+                    <img src="style/images/Image2.jpg" class="ImageSelect" alt="Image2"
+                        onclick="javascript:objPreView.setImage('./style/images/Image2.jpg');" />
+                    <img src="style/images/Image3.webp" class="ImageSelect" alt="Image3"
+                        onclick="javascript:objPreView.setImage('./style/images/Image3.webp');" />
+                    <img src="style/images/Image4.jpg" class="ImageSelect" alt="Image4"
+                        onclick="javascript:objPreView.setImage('./style/images/Image4.jpg');" />
+                    <img src="style/images/arthritis.jpg" class="ImageSelect" alt="Image5"
+                        onclick="javascript:objPreView.setImage('./style/images/arthritis.jpg');" />
+                    <img src="style/images/Design.jpg" class="ImageSelect" alt="Image6"
+                        onclick="javascript:objPreView.setImage('./style/images/Design.jpg');" />
+                </div>
+            </div>
         </div>
 
     </body>
