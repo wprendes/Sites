@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script lang="javascript" src="./script/frames.js"></script>
+        <title>Frame Test</title>
+    </head>
+
+    <body>
+        <style>
+            #Page {
+                background-color: transparent;
+                min-width: 100%;
+                min-height: 100%
+            }
+
+            p {
+                display: block;
+            }
+
+            .RightBox {
+                background-color: lightyellow;
+                width: 200px;
+                height: 200px;
+                float: right;
+                display: inline;
+                align-items: flex-end;
+                justify-content: center;
+                margin: 20px;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .LeftBox {
+                background-color: lightyellow;
+                width: 200px;
+                height: 200px;
+                float: left;
+                display: inline;
+                align-items: center;
+                justify-content: center;
+                margin: 20px;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+        </style>
+
+        <div id="Page">
+            <h1>Frame Test</h1>
+            <p>This is a demo of JavaScript features.</p>
+
+            <p>This is a simple demonstration of the GrowBox method - From Left and From Right.</p>
+            <div id="TopRight" class="RightBox">
+                <p>Click me to grow!</p>
+            </div>
+            <script>
+                const grow = new Frame("TopRight");
+                const objTR = document.getElementById("TopRight");
+                objTR.addEventListener("click", () => grow.GrowBox(500, 500));
+            </script>
+
+            <div id="TopLeft" class="LeftBox">
+                <p>Click me to grow!</p>
+            </div>
+            <script>
+                const shrink = new Frame("TopLeft");
+                const objTL = document.getElementById("TopLeft");
+                objTL.addEventListener("click", () => shrink.GrowBox(500, 500));
+            </script>
+        </div>
+
+    </body>
+
+</html>

@@ -1,6 +1,7 @@
 
 class Slider {
-    constructor(container) {
+
+    constructor(container, slideIndex = null) {
         //this.container = document.querySelector(container);
         //this.slides = this.container.querySelector(row);
         this.container = document.getElementById(container);
@@ -19,6 +20,15 @@ class Slider {
         this.slides.addEventListener("touchstart", this.touchStart.bind(this));
         this.slides.addEventListener("touchmove", this.touchMove.bind(this));
         this.slides.addEventListener("touchend", this.touchEnd.bind(this));
+
+        this.slideIndex = null;      // document.createElement("div");
+        if (slideIndex) {
+            this.slideIndex = document.getElementById(slideIndex);
+            if (this.slideIndex) {
+                this.createIndicators();
+                this.updateIndicators();
+            }
+        }
     }
 
     next() {
@@ -44,6 +54,7 @@ class Slider {
     update() {
         this.slides.style.transition = "transform 0.4s ease";
         this.slides.style.transform = `translateX(-${this.index * this.width}px)`;
+        this.updateIndicators();
     }
 
     pause(interval = 0) {
@@ -96,7 +107,44 @@ class Slider {
             this.update();
         }
     }
+
+    createIndicators() {
+        if (!this.slideIndex) return;
+        this.indicators = [];
+
+        for (let i = 0; i < this.total; i++) {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+
+            dot.addEventListener("click", () => {
+                this.goToSlide(i);
+                this.pause(); // stop autoplay when clicking dots
+            });
+
+            this.slideIndex.appendChild(dot);
+            this.indicators.push(dot);
+        }
+
+    }
+
+    updateIndicators() {
+        if (!this.slideIndex) return;
+
+        this.indicators.forEach((dot, i) => {
+            dot.classList.toggle("active", i === this.index);
+        });
+    }
+
+    goToSlide(i) {
+        this.index = i;
+        this.update();
+        this.updateIndicators();
+    }
+
+
 }
+
+
 
 
 class Parallax {

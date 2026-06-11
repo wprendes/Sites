@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script lang="javascript" src="./script/slider.js"></script>
+        <title>Slider Test Page</title>
+    </head>
+
+    <body>
+        <style>
+            #Page {
+                background-color: transparent;
+                min-width: 100%;
+                min-height: 100%
+            }
+
+            p {
+                display: block;
+            }
+
+            #SlideHolder {
+                width: fit-content;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+
+            .slider {
+                width: 600px;
+                height: 800px;
+                overflow: hidden;
+            }
+
+            .slides {
+                display: flex;
+                transition: transform 0.4s ease;
+            }
+
+            .slide {
+                background-color: gray;
+                min-width: 600px;
+                height: 800px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+            }
+
+            .LeftSide,
+            .RightSide {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+                cursor: pointer;
+                font-size: 2rem;
+            }
+
+            .LeftSide {
+                width: 30px;
+                height: 100%;
+                left: 0;
+            }
+
+            .RightSide {
+                width: 30px;
+                height: 100%;
+                right: 0;
+            }
+
+            .indicators {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .indicators .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #bbb;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .indicators .dot.active {
+                background: #333;
+            }
+        </style>
+
+        <div id="Page">
+
+            <div id="SlideHolder">
+                <div id="slide" class="slider">
+                    <div class="slides">
+                        <div class="slide">1</div>
+                        <div class="slide">2</div>
+                        <div class="slide">3</div>
+                        <div class="slide">4</div>
+                        <div class="slide">5</div>
+                    </div>
+                </div>
+                <div id="slide-index" class="indicators"></div>
+                <script type="text/javascript">
+                    const slider = new Slider("slide", "slide-index");
+                    slider.AutoPlay();
+                </script>
+                <button class="LeftSide" onclick="slider.back();">❮</button>
+                <button class="RightSide" onclick="slider.next();">❯</button>
+            </div>
+        </div>
+    </body>
+
+</html>

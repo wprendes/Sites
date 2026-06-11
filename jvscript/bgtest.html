@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script lang="javascript" src="./script/bg.js"></script>
+        <title>Back Ground Test</title>
+    </head>
+
+    <body>
+        <style>
+            #Page {
+                background-color: transparent;
+                min-width: 100%;
+                min-height: 100%
+            }
+
+            p {
+                display: block;
+            }
+
+            .BoxColor {
+                background-color: lightyellow;
+                width: 200px;
+                height: 200px;
+                float: left;
+                display: inline;
+                align-items: center;
+                justify-content: center;
+                margin: 20px;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .BoxImg {
+                background-image: url("./style/images/space.webp");
+                background-size: cover;
+                width: 200px;
+                height: 200px;
+                float: left;
+                display: inline;
+                align-items: center;
+                justify-content: center;
+                margin: 20px;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+        </style>
+
+        <div id="Page">
+            <h1>Back Ground Test</h1>
+            <p>This is a demo of JavaScript features.</p>
+
+            <p>This is a simple demonstration of the GrowBox method - From Left and From Right.</p>
+            <div id="ColorBox" class="BoxColor">
+                <p>Click me to change color!</p>
+            </div>
+            <script>
+                const effectRB = new BackgroundFX(".BoxColor");
+                const objTR = document.getElementById("ColorBox");
+                objTR.addEventListener("click", () => { effectRB.setColor("lightpink"); });
+            </script>
+
+            <div id="ImageBox" class="BoxImg">
+                <p>Click me to change Image!</p>
+            </div>
+            <script>
+                const effectLB = new BackgroundFX(".BoxImg");
+                const objTL = document.getElementById("ImageBox");
+                objTL.addEventListener("click", () => { effectLB.setImage("./style/images/Ted.jpg"); });
+            </script>
+        </div>
+
+    </body>
+
+</html>
