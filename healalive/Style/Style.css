@@ -296,6 +296,20 @@ body {
 
     /*End of header styling*/
 
+    .SectionIns .SectionContent {
+        margin-top: 40px;
+    }
+
+    .InsuranceTable td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .InsuranceTable td img {
+        width: 100px;
+        height: auto;
+    }
+
     /*Section styling*/
     .Section1 {
         background-image: url(Images/vectorbgv.jpg);
@@ -823,6 +837,20 @@ body {
         position: fixed;
     }
 
+    .SectionIns .SectionContent {
+        margin-top: 100px;
+    }
+
+    .InsuranceTable td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .InsuranceTable td img {
+        width: 300px;
+        height: auto;
+    }
+
     /*End of header styling*/
 
     .Section1 {
@@ -1281,6 +1309,13 @@ body {
 
 #Arthritis {
     background-image: url(Images/arthritis.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#BloodPressure {
+    background-image: url('Images/blood presure.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
