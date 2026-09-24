@@ -1321,6 +1321,20 @@ body {
     background-repeat: no-repeat;
 }
 
+#Cholesterol {
+    background-image: url('Images/diabetes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#Diabetes {
+    background-image: url('Images/Diabetes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /******************************************/
 
 /* =========================================
